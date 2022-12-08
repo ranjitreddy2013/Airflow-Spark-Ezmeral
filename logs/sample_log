@@ -1,0 +1,33 @@
+*** Reading local file: /opt/mapr/airflow/airflow-2.2.1/logs/sparkoperator_demo/spark_submit_task/2022-12-08T19:53:59.162070+00:00/1.log
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: sparkoperator_demo.spark_submit_task manual__2022-12-08T19:53:59.162070+00:00 [queued]>
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1035} INFO - Dependencies all met for <TaskInstance: sparkoperator_demo.spark_submit_task manual__2022-12-08T19:53:59.162070+00:00 [queued]>
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1241} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1242} INFO - Starting attempt 1 of 1
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1243} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1262} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2022-12-08 19:53:59.162070+00:00
+[2022-12-08, 19:54:03 UTC] {standard_task_runner.py:52} INFO - Started process 2366734 to run task
+[2022-12-08, 19:54:03 UTC] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'sparkoperator_demo', 'spark_submit_task', 'manual__2022-12-08T19:53:59.162070+00:00', '--job-id', '250', '--raw', '--subdir', 'DAGS_FOLDER/sparkoperator_demo.py', '--cfg-path', '/tmp/tmphxj5ii_1', '--error-file', '/tmp/tmpct5otmh8']
+[2022-12-08, 19:54:03 UTC] {standard_task_runner.py:77} INFO - Job 250: Subtask spark_submit_task
+[2022-12-08, 19:54:03 UTC] {logging_mixin.py:109} INFO - Running <TaskInstance: sparkoperator_demo.spark_submit_task manual__2022-12-08T19:53:59.162070+00:00 [running]> on host rrl-ecp-demo-externaldf-host-1.demo.com
+[2022-12-08, 19:54:03 UTC] {taskinstance.py:1427} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=sparkoperator_demo
+AIRFLOW_CTX_TASK_ID=spark_submit_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-12-08T19:53:59.162070+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-12-08T19:53:59.162070+00:00
+[2022-12-08, 19:54:03 UTC] {base.py:70} INFO - Using connection to: id: spark_local. Host: yarn, Port: None, Schema: , Login: , Password: None, extra: {'queue': 'root.default', 'master': 'local[*]', 'spark-home': '/opt/mapr/spark/spark-3.2.0/', 'spark_binary': 'spark-submit', 'namespace': 'default', 'MAPR_TICKETFILE_LOCATION': '/tmp/maprticket_5000', 'YARN_CONF_DIR': '/opt/mapr/hadoop/hadoop-2.7.6/etc/hadoop', 'HADOOP_CONF_DIR': '/opt/mapr/hadoop/hadoop-2.7.6/etc/hadoop'}
+[2022-12-08, 19:54:03 UTC] {spark_submit.py:362} INFO - Spark-Submit cmd: /opt/mapr/spark/spark-3.2.0/bin/spark-submit --master yarn --name arrow-spark --queue root.default /home/mapr/sparksubmit_basic.py
+[2022-12-08, 19:54:20 UTC] {spark_submit.py:521} INFO - 22/12/08 19:54:20 WARN Utils: Service 'SparkUI (HTTPS)' could not bind on port 4440. Attempting port 4441.
+[2022-12-08, 19:54:20 UTC] {spark_submit.py:521} INFO - 22/12/08 19:54:20 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+[2022-12-08, 19:54:45 UTC] {spark_submit.py:521} INFO - WARNING: An illegal reflective access operation has occurred
+[2022-12-08, 19:54:45 UTC] {spark_submit.py:521} INFO - WARNING: Illegal reflective access by org.apache.spark.util.SizeEstimator$ (file:/opt/mapr/spark/spark-3.2.0/jars/spark-core_2.12-3.2.0.0-eep-810.jar) to field java.util.concurrent.ConcurrentHashMap.table
+[2022-12-08, 19:54:45 UTC] {spark_submit.py:521} INFO - WARNING: Please consider reporting this to the maintainers of org.apache.spark.util.SizeEstimator$
+[2022-12-08, 19:54:45 UTC] {spark_submit.py:521} INFO - WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[2022-12-08, 19:54:45 UTC] {spark_submit.py:521} INFO - WARNING: All illegal access operations will be denied in a future release
+[2022-12-08, 19:54:48 UTC] {spark_submit.py:521} INFO - Lines with a: 383, lines with b: 383
+[2022-12-08, 19:54:48 UTC] {taskinstance.py:1270} INFO - Marking task as SUCCESS. dag_id=sparkoperator_demo, task_id=spark_submit_task, execution_date=20221208T195359, start_date=20221208T195403, end_date=20221208T195448
+[2022-12-08, 19:54:48 UTC] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-12-08, 19:54:48 UTC] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
+
