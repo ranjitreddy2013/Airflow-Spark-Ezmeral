@@ -28,3 +28,9 @@ Airflow can be installed on a client node. The installation steps are the same a
        /opt/mapr/airflow/airflow-<version>/bin/airflow.sh [start|stop] webserver
 ##### To manage the scheduler:
        /opt/mapr/airflow/airflow-<version>/bin/airflow.sh [start|stop] scheduler
+
+You can access Airflow web UI on https://<Data Fabric Node>:8780/home  Or login to Data Fabric MCS (https://<Data Fabric Node>:8443, after login, click on Services tab, find the AirflowWebserver service, click on it view the UI.
+   
+### Building the DAG
+   
+
