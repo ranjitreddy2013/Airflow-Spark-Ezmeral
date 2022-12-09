@@ -102,19 +102,29 @@ default_args = {
 In the above code spark_submit_local will execute. There are no other tasks that it is dependent on.
    
    #### Step 6: Creating the connection
-   Creating the connection airflow to connect the spark as shown in below. In the Airflow web ui, click on the Admin tab, select the connections, you will get a new window with options to add new connections. Click on "+" to create a new connection in Airflow to connect to Spark as shown below:
-	![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/spark_yarn_connection.png)
-   
-   Enter desired conn id, select Spark-Ezmeral as connection type, 
-   
-   
-   
-   
-   spark-submit script is used for submitting a Spark app to Data Fabric cluster. For example, running PySpark app sparksubmit_basic.py  is as follows:
+
+spark-submit script is used for submitting a Spark app to Data Fabric cluster. For example, running PySpark app sparksubmit_basic.py  is as follows:
    ```
    /opt/mapr/spark/spark-3.2.0/bin/spark-submit --master local[*] --name arrow-spark --queue root.default /home/mapr/sparksubmit_basic.py
    ```
-   So for building a SparkSubmitOperator in Airflow you need to follow below steps:
+   Creating the connection in airflow to connect the spark as shown in below. In the Airflow web ui, click on the Admin tab, select the connections, you will get a new window with options to add new connections. Click on "+" to create a new connection in Airflow to connect to Spark as shown below:
+	![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/spark_yarn_connection.png)
+   
+   Enter desired conn id, select Ezmeral Spark as connection type, host as yarn, for extra, enter MAPR_TICKETFILE_LOCATION and other variables as shown in below example:
+	
+```
+{"queue": "root.default", "master": "local[*]", "spark-home": "/opt/mapr/spark/spark-3.2.0/", "spark_binary": "spark-submit", "namespace": "default", "MAPR_TICKETFILE_LOCATION": "/tmp/maprticket_5000", "YARN_CONF_DIR": "/opt/mapr/hadoop/hadoop-2.7.6/etc/hadoop", "HADOOP_CONF_DIR": "/opt/mapr/hadoop/hadoop-2.7.6/etc/hadoop"}
+```
+	
+   #### Step 7: Verifying the DAG tasks
+Click on the "sparkoperator_demo" name in the DAG list and then select the graph view; as shown below, we have a task called spark_submit_task as shown below:
+![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/sparkoperator_demo_graph.png)
+	
+
+Click on the task that will pop up a window with options. One of the options is "log", click on it to view the log. Here is a [sample log](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/logs/sample_log).
+	        
+   
+   
    
    
 
