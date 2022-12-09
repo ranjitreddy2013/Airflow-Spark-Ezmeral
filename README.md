@@ -32,5 +32,8 @@ Airflow can be installed on a client node. The installation steps are the same a
 You can access Airflow web UI on https://<Data Fabric Node>:8780/home  Or login to Data Fabric MCS (https://<Data Fabric Node>:8443, after login, click on Services tab, find the AirflowWebserver service, click on it view the UI.
    
 ### Building the DAG
-   
+   spark-submit script is used for submitting a Spark app to Data Fabric cluster. For example, running PySpark app sparksubmit_basic.py  is as follows:
+   ```
+   /opt/mapr/spark/spark-3.2.0/bin/spark-submit --master local[*] --name arrow-spark --queue root.default /home/mapr/sparksubmit_basic.py
+   ```
 
