@@ -103,6 +103,7 @@ In the above code spark_submit_local will execute. There are no other tasks that
    
    #### Step 6: Creating the connection
    Creating the connection airflow to connect the spark as shown in below. In the Airflow web ui, click on the Admin tab, select the connections, you will get a new window with options to add new connections. Click on "+" to create a new connection in Airflow to connect to Spark as shown below:
+	![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/spark_yarn_connection.png)
    
    Enter desired conn id, select Spark-Ezmeral as connection type, 
    
