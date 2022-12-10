@@ -123,8 +123,29 @@ Click on the "sparkoperator_demo" name in the DAG list and then select the graph
 
 Click on the task that will pop up a window with options. One of the options is "log", click on it to view the log. Here is a [sample log](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/logs/sample_log).
 	        
+   ### Trigger the DAGs via REST API
+   #### Step 1 - Enable the REST API
+By default, airflow does not accept requests made to the API. However, it’s easy  to turn on:
+
+Comment out the original line "auth_backend = airflow.api.auth.backend.deny_all" with "auth_backend = airflow.api.auth.backend.basic_auth" in the $AIRFLOW_HOME/conf/airflow.cfg.
+
+To be validated by the API, we simply need to pass an Authorization header and the base64 encded form of username:password where username and password are for the user created in Airflow.
+
+#### Step 2: Test the API by Listing Dags
+With Step 1 complete, we can list the dags in Airflow via /dags. For example:
+![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/api_request_list_dags.png)
+
+#### Step 3: Trigger the dag
+In Step 2,  we saw that we can use a GET request to /dags to get a simple list. We can use a POST request to trigger the dag by name. The DAG I want to trigger is called tch_dag_run. As shown below:
+
+   ![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/postman_request_trigger.png)
    
+#### Step 4: Review the Triggered Dag
    
+   With the DAG triggered, we can use the Airflow UI to review the process, but we can also use the REST API to poll the job for it’s status via a GET call to http://<airflow hostname>:<port>/api/v1/dags/tch_dag_run/dagRuns where again, we are passing in the dag name. In this case, we are passing in tch_dag_run but you would use the name of your own dag. In the below screenshot, DAG run can be verified in the Airflow UI by clicking on the "tch_dag_run" DAG. Selecting the Run as shown below:
+      ![alt text](https://github.com/ranjitreddy2013/Airflow-Spark-Ezmeral/blob/main/connection/api_trigger_dag.png)
+
+
    
    
 
