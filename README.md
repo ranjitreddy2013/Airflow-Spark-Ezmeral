@@ -83,7 +83,7 @@ default_args = {
 
 ```
     spark_submit_local = SparkSubmitOperator(
-		application ='/home/hduser/basicsparksubmit.py' ,
+		application ='/home/mapr/basicsparksubmit.py' ,
 		conn_id= 'spark_local', 
 		task_id='spark_submit_task', 
 		dag=dag_spark
