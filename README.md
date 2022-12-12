@@ -129,7 +129,7 @@ By default, airflow does not accept requests made to the API. However, it’s ea
 
 Comment out the original line "auth_backend = airflow.api.auth.backend.deny_all" with "auth_backend = airflow.api.auth.backend.basic_auth" in the $AIRFLOW_HOME/conf/airflow.cfg.
 
-To be validated by the API, we simply need to pass an Authorization header and the base64 encded form of username:password where username and password are for the user created in Airflow.
+To be validated by the API, we simply need to pass an Authorization header and the base64 encoded form of username:password where username and password are for the user created in Airflow.
 
 #### Step 2: Test the API by Listing Dags
 With Step 1 complete, we can list the dags in Airflow via /dags. For example:
